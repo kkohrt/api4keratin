@@ -1,12 +1,15 @@
-# README
+# API4Keratin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A bare bones Rails API application that uses Keratin's [authn-rb|https://github.com/keratin/authn-rb] gem to authenticate against a [Keratin AuthN|https://keratin.tech] Server.
 
-Things you may want to cover:
 
-* Ruby version: 2.7.2
+# Requirements
 
+* RVM preferred (.ruby-gemset and .ruby-version provided)
+
+* Built on Ruby version: 2.7.2 (but should work on other versions)
+
+* sqlite (though the postgres gem)
 * System dependencies
 
 Meant to operate in conjunction with the [Keratin Authn Server](https://github.com/
@@ -49,4 +52,15 @@ Creates 3 sample users with logins:
  ```
 
  * take the returned id_token and use it as a bearer token when accessing current user http://localhost:3000/current_user
+ ```
+ {
+    "id": 1,
+    "first_name": "Sam",
+    "last_name": "Snead",
+    "email": "sam@snead.net",
+    "auth_uid": "1",
+    "created_at": "2021-03-25T20:59:46.779Z",
+    "updated_at": "2021-03-25T20:59:46.779Z"
+}
+```
 

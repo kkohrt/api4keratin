@@ -10,12 +10,6 @@
 #                                          DELETE /users/:id(.:format)                                                                              users#destroy
 #                             current_user GET    /current_user(.:format)                                                                           users#current
 #                                    login GET    /login(.:format)                                                                                  login#login
-#                                    books GET    /books(.:format)                                                                                  books#index
-#                                          POST   /books(.:format)                                                                                  books#create
-#                                     book GET    /books/:id(.:format)                                                                              books#show
-#                                          PATCH  /books/:id(.:format)                                                                              books#update
-#                                          PUT    /books/:id(.:format)                                                                              books#update
-#                                          DELETE /books/:id(.:format)                                                                              books#destroy
 #            rails_postmark_inbound_emails POST   /rails/action_mailbox/postmark/inbound_emails(.:format)                                           action_mailbox/ingresses/postmark/inbound_emails#create
 #               rails_relay_inbound_emails POST   /rails/action_mailbox/relay/inbound_emails(.:format)                                              action_mailbox/ingresses/relay/inbound_emails#create
 #            rails_sendgrid_inbound_emails POST   /rails/action_mailbox/sendgrid/inbound_emails(.:format)                                           action_mailbox/ingresses/sendgrid/inbound_emails#create
@@ -47,6 +41,5 @@ Rails.application.routes.draw do
   get 'current_user', to: 'users#current'
   get 'login', to: 'login#login'
 
-  resources :books
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
