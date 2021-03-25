@@ -27,18 +27,18 @@ Any issues with Keratin: Check `config/initializers/keratin.rb`
 
  1. Run the Keratin "[Getting Started](https://keratin.tech/#getting-started)" docker command so that new users will be populated in the Keratin datbase
 
- 2. Create and seed the database
+ 2. Create and seed the rails database
 ```
 rake db:create
 rake db:migrate
 rake db:seed"
 ```
-Creates 3 sample users with logins:
+This will create 3 sample users in the rails DB with logins in the Keratin DB:
 | username          | login         |
 | ----------------- |:-------------:|
-| sam@snead.net     | right foo     |
-| holly@example.com | right bar     |
-| marty@example.com | right baz     |
+| sam@snead.net     | SuperSecret   |
+| holly@example.com | SuperSecret   |
+| marty@example.com | SuperSecret   |
 
 
 **NOTE:** *You must have the Keratin server running or the user's auth_uid will not be populated*
