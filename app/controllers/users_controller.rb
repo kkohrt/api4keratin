@@ -3,9 +3,14 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
+    @users = User.all.to_a << current_user
 
     render json: @users
+  end
+
+  # GET /users/1
+  def current
+    render json: current_user
   end
 
   # GET /users/1
@@ -39,13 +44,14 @@ class UsersController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_user
-      @user = User.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :auth_uid)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :auth_uid)
+  end
 end

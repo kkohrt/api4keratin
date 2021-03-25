@@ -1,0 +1,23 @@
+<h1>Login to Keratin Server</h1>
+<i>@ http://localhost:8080/session</i>
+<%= form_with url: "http://localhost:8080/session", method: :post do |form| %>
+  <p>
+  <%= form.label :username, 'Username:' %>
+  <%= form.text_field :username %>
+  </p>
+  <p>
+  <%= form.label :password, 'Password:' %>
+  <%= form.password_field :password %>
+  </p>
+  <p>
+  <%= form.submit "Login" %>
+</p>
+<% end %>
+<p>
+  <%= link_to 'Refresh Session', 'http://localhost:8080/session/refresh' %>
+</p>
+
+
+<p>
+  <%= link_to 'Get Token', 'http://localhost:8080/session/token?username=sam%40snead.net' %>
+</p>

@@ -1,12 +1,15 @@
 # == Route Map
 #
 #                                   Prefix Verb   URI Pattern                                                                                       Controller#Action
+#                                     root GET    /                                                                                                 users#index
 #                                    users GET    /users(.:format)                                                                                  users#index
 #                                          POST   /users(.:format)                                                                                  users#create
 #                                     user GET    /users/:id(.:format)                                                                              users#show
 #                                          PATCH  /users/:id(.:format)                                                                              users#update
 #                                          PUT    /users/:id(.:format)                                                                              users#update
 #                                          DELETE /users/:id(.:format)                                                                              users#destroy
+#                             current_user GET    /current_user(.:format)                                                                           users#current
+#                                    login GET    /login(.:format)                                                                                  login#login
 #                                    books GET    /books(.:format)                                                                                  books#index
 #                                          POST   /books(.:format)                                                                                  books#create
 #                                     book GET    /books/:id(.:format)                                                                              books#show
@@ -39,7 +42,11 @@
 #                     rails_direct_uploads POST   /rails/active_storage/direct_uploads(.:format)                                                    active_storage/direct_uploads#create
 
 Rails.application.routes.draw do
+  root 'users#index'
   resources :users
+  get 'current_user', to: 'users#current'
+  get 'login', to: 'login#login'
+
   resources :books
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

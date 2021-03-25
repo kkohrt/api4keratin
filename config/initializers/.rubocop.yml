@@ -1,0 +1,17 @@
+Documentation:
+  Exclude:
+    - app/controllers/*.rb
+    - db/migrate/*.rb
+    - test/**/*.rb
+
+Layout/LineLength:
+  Max: 110
+  IgnoredPatterns: ['\A#']
+
+Metrics/MethodLength
+  Max: 15
+
+Style/FrozenStringLiteralComment:
+  Exclude:
+    - db/migrate/*.rb
+    - db/*.rb
