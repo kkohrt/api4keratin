@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
+  before_action :authenticate!
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /users
   def index
-    @users = User.all.to_a << current_user
+    @users = User.all
 
     render json: @users
   end
